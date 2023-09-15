@@ -10,12 +10,14 @@ cursor = data_connecting.cursor()
 cursor.execute("SELECT * FROM climatedata")
 climate_data = cursor.fetchall()
 
+# print(climate_data)
+
 for a in climate_data:
     years.append(a[0])
     co2.append(a[1])
     temp.append(a[2])
 
-print(years, co2, temp)
+# print(years, co2, temp)
 
 plt.subplot(2, 1, 1)
 plt.plot(years, co2, 'b--')
